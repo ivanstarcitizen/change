@@ -57,6 +57,6 @@ const mongooseConnection = async () => {
   
 mongooseConnection();
   
-app.listen(3001, async () => {
+app.listen(process.env.PORT || 3001, async () => {
     console.log('🚀 Server started...');
 });
