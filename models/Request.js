@@ -10,6 +10,7 @@ const Request = new Schema({
     getAmount: {
         type: String
     },
+    wallet: String,
     telegram: {
         type: String
     }, 
