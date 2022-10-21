@@ -33,6 +33,7 @@ app.get('/create', (req, res) => {
         card: req.query.card ? req.query.card : 'No data',
         cardName: req.query.cardName ? req.query.cardName : 'No data',
         telegram: req.query.telegram ? req.query.telegram : 'No data',
+        wallet: req.query.wallet ? req.query.wallet : 'No data',
         date: Date.now(),
         num: getRandomInt(999999)
     });
