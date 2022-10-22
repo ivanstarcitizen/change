@@ -34,6 +34,7 @@ app.get('/create', (req, res) => {
         cardName: req.query.cardName ? req.query.cardName : 'No data',
         telegram: req.query.telegram ? req.query.telegram : 'No data',
         wallet: req.query.wallet ? req.query.wallet : 'No data',
+        is_canceled: '0',
         date: Date.now(),
         num: getRandomInt(999999),
         is_confirmed: '0'
