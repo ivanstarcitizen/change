@@ -57,7 +57,7 @@ app.get('/confirm', async (req, res) => {
     
     let doc = await Request.findOneAndUpdate(filter, update);
 
-    res.json(data)
+    res.json({result:true})
 });
 
 
