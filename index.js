@@ -35,7 +35,8 @@ app.get('/create', (req, res) => {
         telegram: req.query.telegram ? req.query.telegram : 'No data',
         wallet: req.query.wallet ? req.query.wallet : 'No data',
         date: Date.now(),
-        num: getRandomInt(999999)
+        num: getRandomInt(999999),
+        is_confirmed: '0'
     });
     newRequest.save();
       
@@ -45,6 +46,17 @@ app.get('/create', (req, res) => {
 app.get('/request', async (req, res) => {
     const id = req.query.id;
     const data = await Request.find({requestId: id})
+    res.json(data)
+});
+
+app.get('/confirm', async (req, res) => {
+    const id = req.query.id;
+    
+    const filter = { requestId: id };
+    const update = { is_confirmed: '1' };
+    
+    let doc = await Request.findOneAndUpdate(filter, update);
+
     res.json(data)
 });
 
