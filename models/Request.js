@@ -1,6 +1,7 @@
 const {Schema, model} = require('mongoose')
 
 const Request = new Schema({
+    is_confirmed: String,
     sendCrypto: String,
     num:String,
     getCrypto: String,
