@@ -60,6 +60,17 @@ app.get('/confirm', async (req, res) => {
     res.json({result:true})
 });
 
+app.get('/cancel', async (req, res) => {
+    const id = req.query.id;
+    
+    const filter = { requestId: id };
+    const update = { is_canceled: '1' };
+    
+    let doc = await Request.findOneAndUpdate(filter, update);
+
+    res.json({result:true})
+});
+
 
 
 const mongooseConnection = async () => {
