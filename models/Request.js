@@ -2,6 +2,7 @@ const {Schema, model} = require('mongoose')
 
 const Request = new Schema({
     is_canceled: String,
+    tgcontact: String,
     is_confirmed: String,
     sendCrypto: String,
     num:String,
