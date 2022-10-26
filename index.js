@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Request = require('./models/Request');
-const Manage = require('./models/Manage');
+const Manages = require('./models/Manages');
 const cors = require('cors');
 
 const app = express();
@@ -74,10 +74,21 @@ app.get('/cancel', async (req, res) => {
     res.json({result:true})
 });
 
+app.get('/manage/update/oHcOtPm6Vn4s0Hh3L3', async (req, res) => {
+    const name = req.query.name;
+    
+    const filter = { name: name };
+    const update = { coeficient: req.query.coeficient };
+    
+    let doc = await Manages.findOneAndUpdate(filter, update);
+
+    res.json({result:true})
+});
+
 
 app.get('/manage/oHcOtPm6Vn4s0Hh3L3', async (req, res) => {
     
-    let doc = await Manage.find();
+    let doc = await Manages.find();
 
     res.json(doc)
 });
