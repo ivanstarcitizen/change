@@ -77,7 +77,7 @@ app.get('/cancel', async (req, res) => {
 
 app.get('/manage/oHcOtPm6Vn4s0Hh3L3', async (req, res) => {
     
-    let doc = await Request.find();
+    let doc = await Manage.find();
 
     res.json(doc)
 });
