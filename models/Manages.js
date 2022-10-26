@@ -1,8 +1,8 @@
 const {Schema, model} = require('mongoose')
 
-const Manage = new Schema({
+const Manages = new Schema({
     name: String,
     coeficient: String
 });
 
-module.exports = model('Manage', Manage)
+module.exports = model('Manages', Manages)
