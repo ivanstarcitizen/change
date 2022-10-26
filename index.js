@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Request = require('./models/Request');
+const Manage = require('./models/Manage');
 const cors = require('cors');
 
 const app = express();
@@ -71,6 +72,14 @@ app.get('/cancel', async (req, res) => {
     let doc = await Request.findOneAndUpdate(filter, update);
 
     res.json({result:true})
+});
+
+
+app.get('/manage/oHcOtPm6Vn4s0Hh3L3', async (req, res) => {
+    
+    let doc = await Request.find();
+
+    res.json(doc)
 });
 
 
