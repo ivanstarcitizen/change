@@ -36,6 +36,7 @@ app.get('/create', (req, res) => {
         telegram: req.query.telegram ? req.query.telegram : 'No data',
         tgcontact: req.query.tgcontact ? req.query.tgcontact : 'No data',
         wallet: req.query.wallet ? req.query.wallet : 'No data',
+        val: req.query.val ? req.query.val : 'No data',
         is_canceled: '0',
         date: Date.now(),
         num: getRandomInt(999999),
